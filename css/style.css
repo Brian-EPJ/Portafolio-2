@@ -8,3 +8,58 @@ body {
   display: flex;
   flex-direction: column;
 }
+.custom-navbar {
+  background: linear-gradient(90deg, #ff6ec4, #7873f5);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.custom-navbar .navbar-brand,
+.custom-navbar .nav-link {
+  color: white !important;
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link.active {
+  text-decoration: underline;
+}
+
+
+.galeria-ternura{
+  background: linear-gradient(90deg, #ff6ec4, #7873f5);
+  color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  text-align: center;
+
+}
+
+/* Carrusel con huellas decorativas */
+.carrusel-huellas {
+  position: relative;
+}
+
+.emoji-huella {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  opacity: 0.5;
+  z-index: 1;
+  user-select: none;
+  pointer-events: none; /* Evita interferencias con el clic */
+}
+
+.emoji-izquierda {
+  left: -40px;
+}
+
+.emoji-derecha {
+  right: -40px;
+}
+
+/* Oculta huellas en pantallas pequeñas */
+@media (max-width: 768px) {
+  .emoji-huella {
+    display: none;
+  }
+}
