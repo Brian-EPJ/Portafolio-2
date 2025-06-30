@@ -4,10 +4,15 @@ html, body {
   padding: 0;
 }
 
+.bg-primary {
+  background-color: #00d4d4 !important; /* calipso brillante */
+}
+
 body {
   display: flex;
   flex-direction: column;
 }
+
 .custom-navbar {
   background: linear-gradient(90deg, #ff6ec4, #7873f5);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -18,19 +23,16 @@ body {
   color: white !important;
 }
 
-.custom-navbar .nav-link:hover,
-.custom-navbar .nav-link.active {
+.custom-navbar .nav-link:hover {
   text-decoration: underline;
 }
 
-
-.galeria-ternura{
+.galeria-ternura {
   background: linear-gradient(90deg, #ff6ec4, #7873f5);
   color: white;
   padding: 2rem;
   border-radius: 0.5rem;
   text-align: center;
-
 }
 
 /* Carrusel con huellas decorativas */
@@ -46,7 +48,7 @@ body {
   opacity: 0.5;
   z-index: 1;
   user-select: none;
-  pointer-events: none; /* Evita interferencias con el clic */
+  pointer-events: none;
 }
 
 .emoji-izquierda {
@@ -57,9 +59,109 @@ body {
   right: -40px;
 }
 
-/* Oculta huellas en pantallas pequeñas */
+/* Etiquetas del formulario */
+label {
+  color: white;
+}
+
+.form-control:focus {
+  border-color: #ff6ec4;
+  box-shadow: 0 0 0 0.2rem rgba(255, 110, 196, 0.25);
+}
+
+/* ===== NUEVO: Contenedor principal que alinea imágenes + formulario ===== */
+.formulario-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 3rem auto;
+}
+
+/* ===== Estilo del formulario ===== */
+.formulario-container {
+  background: linear-gradient(90deg, #ff6ec4, #7873f5);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  color: white;
+  max-width: 700px;
+  width: 100%;
+}
+
+.formulario-container label {
+  color: white;
+  font-weight: bold;
+}
+
+.formulario-container .form-control {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 0.75rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.formulario-container .form-control::placeholder {
+  color: #f0f0f0;
+}
+
+.formulario-container .form-control:focus {
+  border-color: white;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  outline: none;
+}
+
+.formulario-container button {
+  background-color: white;
+  color: #ff6ec4;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.5rem;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.formulario-container button:hover {
+  background-color: #f3f3f3;
+}
+
+/* ===== Imágenes laterales del formulario ===== */
+.gato-lateral {
+  max-height: 250px;
+  width: auto;
+  animation: flotar 4s ease-in-out infinite;
+  opacity: 0.9;
+}
+
+/* Animación suave */
+@keyframes flotar {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .emoji-huella {
     display: none;
+  }
+
+  .formulario-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gato-lateral {
+    max-height: 160px;
+    margin-bottom: 1rem;
+  }
+
+  .formulario-container {
+    margin: 1rem;
   }
 }
